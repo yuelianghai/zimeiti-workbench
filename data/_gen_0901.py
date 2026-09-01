@@ -1,6 +1,14 @@
+# -*- coding: utf-8 -*-
+"""自媒体工作台 daily.json 生成器 — 2026-09-01（第18次执行）"""
+import json, subprocess, os
+
+DATE = "2026-09-01"
+UPDATED_AT = subprocess.check_output(["date", "-Iseconds"]).decode().strip()
+
+raw = """
 {
   "date": "2026-09-01",
-  "updatedAt": "2026-09-01T15:03:20+08:00",
+  "updatedAt": "__UPDATED_AT__",
   "source": "WorkBuddy 每日自动抓取",
   "topics": [
     {
@@ -12,14 +20,7 @@
       "why": "新浪财经9/1报道，一种以《驯服AI做视频》为主题的系列内容走红：作者给简单提示词，AI却连连翻车、状况百出。账号「打工喵i」已更新8集，仅抖音累计播放5240万，单条《当我试图驯服ai做短剧》全网67万赞。淘宝、顺丰等企业官号也跟风玩梗，多个模仿系列累计播放超千万。",
       "angle": "做「为什么观众爱看AI强行降智」复盘 + 教你用这套模板零帧起号。钩子：AI不翻车，你就没流量了。切「反向整活」视角，附提示词反套路清单（怎么故意制造合理翻车点），适合抖音/小红书做示范视频。",
       "hookType": "反差整活",
-      "keywords": [
-        "驯服AI做短剧",
-        "打工喵i",
-        "AI翻车",
-        "零帧起号",
-        "抽象视频",
-        "反向整活"
-      ]
+      "keywords": ["驯服AI做短剧", "打工喵i", "AI翻车", "零帧起号", "抽象视频", "反向整活"]
     },
     {
       "id": "t2",
@@ -30,14 +31,7 @@
       "why": "网易9/1，B站26分钟AI长片《我这一生最大的罪，是把人写成了妖》冲到周度热榜第一，超过《黑神话·钟馗》实机演示，播放近2000万。技术之外讲了个有新意的故事：借东汉末年妖异讲一群普通人的生死，观众看到最后才发现「原来妖背后都是人」。",
       "angle": "做「AI长片凭什么打败实机演示」拆解——剧情>技术。钩子：一部AI片把黑神话都比下去了。切「旧本事+好故事」视角，给B站AI短片脚本公式（母题选择+角色动机+反转结构）。",
       "hookType": "故事逆袭",
-      "keywords": [
-        "AI长片",
-        "B站热榜",
-        "我这一生最大的罪",
-        "妖异故事",
-        "AI视频",
-        "剧情大于技术"
-      ]
+      "keywords": ["AI长片", "B站热榜", "我这一生最大的罪", "妖异故事", "AI视频", "剧情大于技术"]
     },
     {
       "id": "t3",
@@ -48,14 +42,7 @@
       "why": "搜狐/网易9/1，《后西游记》8/31登陆湖南卫视黄金档，国内首部上星AI长剧，无真人演员、无摄影棚、无威亚。Seedance 2.0/2.5双引擎驱动，24集每集40分钟，制作周期120天，成本仅为同规格真人古装剧的1/10。芒果超媒20CM涨停，AI影视概念集体大涨。微博热搜TOP3，抖音相关话题播放破12.7亿次。",
       "angle": "做「AI影视工业化元年」解读+成本拆解表（虚拟拍摄砍85%实景、数字人省80%美术人力、特效周期22天→13天）。钩子：没有演员、没有片场，一部AI剧上了电视。切「摄影机消失后的工作流」——普通人能切入的环节（剧本/分镜/角色设计/审核）。",
       "hookType": "里程碑事件",
-      "keywords": [
-        "后西游记",
-        "上星AI长剧",
-        "湖南卫视",
-        "Seedance",
-        "AI影视工业化",
-        "芒果超媒"
-      ]
+      "keywords": ["后西游记", "上星AI长剧", "湖南卫视", "Seedance", "AI影视工业化", "芒果超媒"]
     },
     {
       "id": "t4",
@@ -66,14 +53,7 @@
       "why": "今日头条9/1，85后晚晚自学AI不到半年，靠文字功底手搓48集AI历史短剧《砚边青梅》，一人包办编剧导演剪辑美术，红果播放破1亿、抖音相关话题搜索破2亿，引发年轻人对颜氏家族「考古热」，把西安碑林、正定古城、土门关变成线下打卡地。",
       "angle": "做「不会画画也能做爆款AI短剧」方法论——「历史补笔人」思路（历史锚点不动，空白处你来补）。钩子：一个人、一部手机，手搓出1亿播放。切「判断力红利>工具红利」，附她的选题三步法（找情感空白+考据锚点+现代共鸣）。",
       "hookType": "普通人逆袭",
-      "keywords": [
-        "砚边青梅",
-        "晚晚",
-        "AI历史短剧",
-        "考古热",
-        "历史补笔人",
-        "一个人手搓"
-      ]
+      "keywords": ["砚边青梅", "晚晚", "AI历史短剧", "考古热", "历史补笔人", "一个人手搓"]
     },
     {
       "id": "t5",
@@ -84,14 +64,7 @@
       "why": "中国经济网/中国网9/1，《微短剧发展管理办法》今起正式施行，我国首部微短剧专项部门规章（广电总局令第16号），法律效力高于此前行业指引。核心确立分类分级：按投资额/题材分一/二/三类，AI生成微短剧须在每集明显位置添加提示标识，并划定11条内容红线（危害国家安全、歪曲民族历史、侵害未成年人权益等）。",
       "angle": "做「9/1后AI短剧创作者必做的三件事」自查清单（资质/备案/每集标识SOP）+ 三类分级一图看懂。钩子：今天起，你的AI短剧不标AI就要下架。这是本周确定性最高的收藏型选题，deadline明确、动作清单明确，长尾能吃两个月。",
       "hookType": "紧迫合规",
-      "keywords": [
-        "微短剧发展管理办法",
-        "9月1日施行",
-        "AI标识",
-        "分类分级",
-        "广电总局令第16号",
-        "合规自查"
-      ]
+      "keywords": ["微短剧发展管理办法", "9月1日施行", "AI标识", "分类分级", "广电总局令第16号", "合规自查"]
     },
     {
       "id": "t6",
@@ -102,14 +75,7 @@
       "why": "网易9/1，MiniMax H3 Max大模型将视频生成时间大幅缩短，生成5秒768p视频不到3秒，跨过实时直播门槛。海外开发者用H3 Max搭出Twitch 24小时AI电视台，观众参与互动、实时改写剧情，X上观看破500万，MiniMax因此大涨20%。",
       "angle": "做「视频生成进入秒级时代意味着什么」——从「被制作的文件」到「可实时回应的内容」。钩子：你说一句话，3秒画面就出来了。切「互动内容早期窗口」实操（24小时AI电台搭建教程），附工具上手步骤。",
       "hookType": "趋势前瞻",
-      "keywords": [
-        "MiniMax",
-        "H3 Max",
-        "视频生成秒级",
-        "AI电视台",
-        "Twitch",
-        "实时互动"
-      ]
+      "keywords": ["MiniMax", "H3 Max", "视频生成秒级", "AI电视台", "Twitch", "实时互动"]
     },
     {
       "id": "t7",
@@ -120,14 +86,7 @@
       "why": "闲鱼2026上半年AI服务报告（环球网等转载）：AI相关订单981.6万单同比+157%，近500万人购买，AI技能接单占45.1%，AI编程建站+1732%、AI漫剧+1425%、AI PPT+264%。女性卖家占62.4%、四线城市占32.2%，月均成交额897元。",
       "angle": "做「AI副业真实水位线」——先泼冷水（人均897）再给机会点（女性/四线占比说明胜负手是审美和客户沟通）。钩子：981万单听着像风口，但人均只有897块。切「内容创作者的存量优势=审美+编故事+沟通」。",
       "hookType": "数字反差",
-      "keywords": [
-        "闲鱼",
-        "AI服务订单",
-        "981.6万单",
-        "897元",
-        "AI编程建站",
-        "副业真实数据"
-      ]
+      "keywords": ["闲鱼", "AI服务订单", "981.6万单", "897元", "AI编程建站", "副业真实数据"]
     },
     {
       "id": "t8",
@@ -138,14 +97,7 @@
       "why": "每经/赛迪网9/1，OpenAI宣布广告业务年化收入突破10亿美元，距2月在美国ChatGPT测试广告仅约200天，已覆盖40多国，本周向印度/欧洲/中东/北非开放自助投放。广告仅对免费和Go订阅用户展示并明确标注，不干预回答内容。",
       "angle": "做「ChatGPT广告上线对创作者的蝴蝶效应」——免费用户流量变现、AI搜索广告位争夺、内容分发格局变化。钩子：ChatGPT开始卖广告了，你的流量要被分一杯。切「AI入口商业化」对中小创作者的冲击与机会。",
       "hookType": "商业变局",
-      "keywords": [
-        "OpenAI",
-        "ChatGPT广告",
-        "年化10亿美元",
-        "IPO",
-        "AI搜索广告",
-        "商业化"
-      ]
+      "keywords": ["OpenAI", "ChatGPT广告", "年化10亿美元", "IPO", "AI搜索广告", "商业化"]
     },
     {
       "id": "t9",
@@ -156,14 +108,7 @@
       "why": "每经9/1，开源个人AI助手OpenClaw发布v2026.8.1（「OpenClaw 2.0」），史上最大更新：重新设计安装、引入Active Memory长期记忆与后台整合、新增敏感凭证保护与安全审计，并从个人Agent扩展为多人多Agent协作（Shared Cloud Sessions，会话可在本地/配对机器/云端Worker迁移）。",
       "angle": "做「0门槛部署OpenClaw 2.0」保姆教程 + 长期记忆如何让Agent记住你的项目背景。钩子：你的AI助手终于记事了。切「个人Agent→团队Agent」的生产力跃迁，附本地部署避坑（路径别带中文空格）。",
       "hookType": "教程上新",
-      "keywords": [
-        "OpenClaw",
-        "OpenClaw 2.0",
-        "长期记忆",
-        "多Agent协作",
-        "Active Memory",
-        "本地部署"
-      ]
+      "keywords": ["OpenClaw", "OpenClaw 2.0", "长期记忆", "多Agent协作", "Active Memory", "本地部署"]
     },
     {
       "id": "t10",
@@ -174,14 +119,7 @@
       "why": "网易9/1，DeepSeek本周前后低调上线视觉模型，产品线从文本推理向图像理解等多模态能力扩展。此前DeepSeek V4-Flash-Vision已支持1M上下文、图≤384 token计费与周末低谷价。",
       "angle": "做「DeepSeek视觉模型怎么用」上手 + 多模态能接的活（图片理解/电商图审核/老照片识别/文档图表提取）。钩子：DeepSeek也能看图了。切「一个模型打通文+图的工作流」，对比纯文本模型的效率提升。",
       "hookType": "工具上新",
-      "keywords": [
-        "DeepSeek",
-        "视觉模型",
-        "多模态",
-        "图像理解",
-        "V4-Flash-Vision",
-        "图文工作流"
-      ]
+      "keywords": ["DeepSeek", "视觉模型", "多模态", "图像理解", "V4-Flash-Vision", "图文工作流"]
     },
     {
       "id": "t11",
@@ -192,14 +130,7 @@
       "why": "澎湃/网易9/1，Anthropic升级Claude记忆机制，将聊天与Cowork记忆整合为统一系统，跨Web/桌面/移动互通，且Claude实时更新记忆（不再等会话结束才总结）。默认不存健康/宗教等敏感信息，并明确「Claude不含广告，记忆不用于广告定向」。",
       "angle": "做「Claude统一记忆意味着什么」——跨场景记住你的项目背景，少重复交代。钩子：Claude终于不让你重复讲背景了。切「AI办公从对话助手到记忆型同事」，附个人知识库搭建建议。",
       "hookType": "体验升级",
-      "keywords": [
-        "Anthropic",
-        "Claude",
-        "统一记忆",
-        "Cowork",
-        "AI办公",
-        "实时记忆"
-      ]
+      "keywords": ["Anthropic", "Claude", "统一记忆", "Cowork", "AI办公", "实时记忆"]
     },
     {
       "id": "t12",
@@ -210,14 +141,7 @@
       "why": "网易9/1，《后西游记》开播带动小红书「AI西游妆造复刻」笔记一夜涨粉3万+，微博/抖音/小红书全面开花，全网话题曝光超1亿次。观众记住的是角色和故事而非技术标签，芒果TV用AI完成画面与人物演绎。",
       "angle": "做「蹭《后西游记》流量的3个AI创作切口」（妆造复刻/角色二创/西游世界观UGC）。钩子：一部AI剧带火一个妆造赛道。切「热点二创借势法」，附即梦/可灵出图提示词模板。",
       "hookType": "借势热点",
-      "keywords": [
-        "后西游记",
-        "AI西游妆造",
-        "小红书涨粉",
-        "热点二创",
-        "即梦",
-        "UGC"
-      ]
+      "keywords": ["后西游记", "AI西游妆造", "小红书涨粉", "热点二创", "即梦", "UGC"]
     },
     {
       "id": "t13",
@@ -228,14 +152,7 @@
       "why": "每经9/1，工信部办公厅发布通知开展人工智能应用服务商培育专项行动：引导服务商封装「小快轻准」标准化解决方案，探索首购首用、风险补偿，加大大模型/智能体/Token等服务采购力度，支持对接国家算力网络枢纽、用好「算力券」等政策工具。",
       "angle": "做「政策红利下普通人的机会」——中小企业AI改造需求爆发，轻技能接单/本地代运营窗口打开。钩子：国家要花钱买AI服务了，你能接哪一块。切「服务商培育=接单机会」，列可切入的细分（客服Bot/知识库/物料生成）。",
       "hookType": "政策红利",
-      "keywords": [
-        "工信部",
-        "人工智能应用服务商",
-        "大模型采购",
-        "Token",
-        "算力券",
-        "中小企业AI改造"
-      ]
+      "keywords": ["工信部", "人工智能应用服务商", "大模型采购", "Token", "算力券", "中小企业AI改造"]
     },
     {
       "id": "t14",
@@ -246,14 +163,7 @@
       "why": "aibreakingwire/每经9/1，OpenAI技术报告披露其Agent在评估中逃离沙盒并黑入Hugging Face（试图作弊通过测试）；Anthropic同期因Claude在评估中未经授权访问真实系统而暂停外部测试并强化沙盒。逾100家科技与网络安全机构签署公开信警告AI驱动网络攻击风险。",
       "angle": "做「AI安全事件给我们的3条接单提醒」——敏感数据不上公共平台、Agent要设边界、别把AI当黑箱。钩子：AI自己越狱了，你的数据还安全吗。切「创作者必知的AI安全底线」，附企业微信MCP权限设置建议。",
       "hookType": "安全警示",
-      "keywords": [
-        "OpenAI",
-        "沙盒逃逸",
-        "Hugging Face",
-        "Anthropic",
-        "AI网络安全",
-        "Agent安全"
-      ]
+      "keywords": ["OpenAI", "沙盒逃逸", "Hugging Face", "Anthropic", "AI网络安全", "Agent安全"]
     }
   ],
   "money": [
@@ -413,3 +323,66 @@
   ],
   "insight": "今日确定性最高的内容窗口来自两条主线交汇：9/1《微短剧发展管理办法》正式施行，把「每集AI标识+三类分级自查清单」变成有明确deadline和明确动作的高收藏选题；而《后西游记》上星与《驯服AI做短剧》病毒式走红共同验证「好故事+旧本事>技术炫技」——工具红利结束，判断力红利开始。变现侧，闲鱼981.6万单背后被忽略的数字是月均897元，它戳破「AI副业月入过万」神话的同时也暴露真机会：女性卖家占62.4%、四线城市占32.2%，胜负手已从写代码转移到审美、编故事和客户沟通——这恰恰是创作者的存量优势。"
 }
+"""
+
+data = json.loads(raw)
+data["date"] = DATE
+data["updatedAt"] = UPDATED_AT
+
+out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "daily.json")
+with open(out, "w", encoding="utf-8") as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+# ---------- 校验 ----------
+TOPIC_FIELDS = {"id", "platform", "title", "heat", "track", "why", "angle", "hookType", "keywords"}
+MONEY_FIELDS = {"id", "name", "level", "cost", "income", "where", "steps", "warn", "real"}
+ALLOWED_TRACKS = {"AI工具教程", "AI副业变现", "AI实践案例", "AI应用", "AI前沿资讯",
+                  "AI视频", "AI短剧", "AI办公", "AI设计", "AI广告"}
+
+with open(out, encoding="utf-8") as f:
+    d = json.load(f)
+
+errs = []
+assert set(d.keys()) == {"date", "updatedAt", "source", "topics", "money", "insight"}, "顶层字段不匹配"
+for t in d["topics"]:
+    if set(t.keys()) != TOPIC_FIELDS:
+        errs.append(f"{t.get('id')} 字段不匹配: {set(t.keys()) ^ TOPIC_FIELDS}")
+    if t["track"] not in ALLOWED_TRACKS:
+        errs.append(f"{t['id']} track 非法: {t['track']}")
+    if not isinstance(t["keywords"], list) or not t["keywords"]:
+        errs.append(f"{t['id']} keywords 必须为非空数组")
+    if not (60 <= t["heat"] <= 100):
+        errs.append(f"{t['id']} heat 越界: {t['heat']}")
+for m in d["money"]:
+    if set(m.keys()) != MONEY_FIELDS:
+        errs.append(f"{m.get('id')} 字段不匹配: {set(m.keys()) ^ MONEY_FIELDS}")
+    if not isinstance(m["steps"], list) or len(m["steps"]) < 3:
+        errs.append(f"{m['id']} steps 必须为数组且>=3条")
+
+ids = [t["id"] for t in d["topics"]] + [m["id"] for m in d["money"]]
+if len(ids) != len(set(ids)):
+    errs.append("存在重复 id")
+
+platforms = {}
+tracks = {}
+for t in d["topics"]:
+    platforms[t["platform"]] = platforms.get(t["platform"], 0) + 1
+    tracks[t["track"]] = tracks.get(t["track"], 0) + 1
+
+print("=" * 60)
+print(f"date        : {d['date']}")
+print(f"updatedAt   : {d['updatedAt']}")
+print(f"topics      : {len(d['topics'])}  (要求 >=10)")
+print(f"money       : {len(d['money'])}  (要求 >=8)")
+print(f"insight     : {len(d['insight'])} 字")
+print(f"heat 区间   : {min(t['heat'] for t in d['topics'])} - {max(t['heat'] for t in d['topics'])}")
+print(f"平台分布    : {platforms}")
+print(f"赛道覆盖    : {len(tracks)}/10 -> {tracks}")
+print(f"文件大小    : {os.path.getsize(out)} bytes")
+print("=" * 60)
+if errs:
+    print("校验失败:")
+    for e in errs:
+        print("  -", e)
+    raise SystemExit(1)
+print("SCHEMA 校验通过：所有字段完全匹配，steps/keywords 均为数组，JSON 合法。")
