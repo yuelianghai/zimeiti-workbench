@@ -35,7 +35,9 @@ print('commit rc=', cr.returncode, (cr.stdout or cr.stderr)[-500:])
 
 # 3. push with retry (force to overwrite any drift)
 ok = False
-for i in range(1, 4):
+last = subprocess.run([GIT, 'rev-parse', 'HEAD'], cwd=REPO, env=env, capture_output=True, text=True, encoding='utf-8')
+print('local HEAD =', last.stdout.strip())
+for i in range(1, 7):
     print(f'--- push attempt {i} ---')
     pr = subprocess.run([GIT, 'push', '--force', push_url, 'master'],
                         cwd=REPO, env=env, capture_output=True, text=True, encoding='utf-8')
@@ -44,8 +46,8 @@ for i in range(1, 4):
     if pr.returncode == 0:
         ok = True
         break
-    print(f'attempt {i} failed, sleep 5')
-    time.sleep(5)
+    print(f'attempt {i} failed, sleep 12')
+    time.sleep(12)
 
 print('PUSH_OK' if ok else 'PUSH_FAILED')
 sys.exit(0 if ok else 1)
