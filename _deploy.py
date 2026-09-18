@@ -12,6 +12,8 @@ push_url = f'https://x-access-token:{token}@{REMOTE.split("https://",1)[1]}'
 
 env = dict(os.environ)
 env['GIT_TERMINAL_PROMPT'] = '0'
+git_bin = os.path.dirname(GIT)
+env['PATH'] = git_bin + os.pathsep + env.get('PATH', '')
 
 def run(args, check=True):
     print('$ git', ' '.join(args))
